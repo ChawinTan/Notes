@@ -39,7 +39,7 @@ Most codecs today on the web are H.264
 
 ## WebRTC architecture
 
-![ClientView](architecture.png)
+![ClientView](architecture.jpg)
 
 ## WebRTC API
 
