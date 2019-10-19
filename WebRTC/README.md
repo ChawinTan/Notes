@@ -30,6 +30,16 @@ Containers are not the same as codecs. Codec is an algorithm used for compressio
 
 Most codecs today on the web are H.264
 
+## Stun and Turn servers
+
+Stun and turn servers are used for `NAT` traversals.
+
+Most of us are browsing websites behind firewalls or `NAT` that mask our ip addresses. Stun and turn servers are used to overcome this issue by helping users discover their mapped public ip addresses used for `UDP` flows to remote host.
+
+If `ICE` negotiation fails, then a `TURN` server is used to relay media through a public server.
+
+`ICE` uses both STUN and TURN protocols
+
 ## Basic scheme of WebRTC
 
 1. Media capture - get permission from user to access the devices and manage the streams
@@ -60,3 +70,22 @@ conn.onaddstream = function(stream) {
 ```
 
 `onaddstream` is fired when remote user adds a video or audio stream to their peer connection.
+
+`MediaStreamApi` gives developers access to stream objects representing video and audio streams, manages selection of user input devices, gives user a level of security as it gives users a choice whether to share his device or not.
+
+[Link](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) to various methods and events of mediaStream
+
+`navigator.getUserMedia`
+
+`RTCDataChannel` object allows sending of additional data other than media streams.
+
+```
+var peerConn = new RTCPeerConnection();
+
+//establishing peer connection
+//...
+//end of establishing peer connection
+var dataChannel = peerConnection.createDataChannel("myChannel", dataChannelOptions);
+
+// here we can start sending direct messages to another peer
+```
