@@ -69,7 +69,11 @@ conn.onaddstream = function(stream) {
 };
 ```
 
+config argument contains at least one key, `iceServers`. It is an array or url objects containing information about turn and stun servers.
+
 `onaddstream` is fired when remote user adds a video or audio stream to their peer connection.
+
+[Link](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection) to various methods of rtcPeerConnection
 
 `MediaStreamApi` gives developers access to stream objects representing video and audio streams, manages selection of user input devices, gives user a level of security as it gives users a choice whether to share his device or not.
 
@@ -89,3 +93,16 @@ var dataChannel = peerConnection.createDataChannel("myChannel", dataChannelOptio
 
 // here we can start sending direct messages to another peer
 ```
+
+[Link](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel) to various methods of rtcDataChannel
+
+## Signalling and negotiation
+
+Steps:
+
+1. Create a list of potential candidates for a peer connection
+2. User/application selects a user to make a connection with
+3. Signalling layer notifies another user that some one wants to make a connection and waits for his decision
+4. Once accepted, the initiating user makes a RTCPeerConnection with another user.
+5. Both users exchange software and hardware information through signalling server.
+6. Both users exchange location information.
