@@ -106,3 +106,13 @@ Steps:
 4. Once accepted, the initiating user makes a RTCPeerConnection with another user.
 5. Both users exchange software and hardware information through signalling server.
 6. Both users exchange location information.
+
+## WebRTC vs WebSocket
+
+In short:
+
+Websockets are built for sending data in real time between client and server, websockets can easily accomate media.
+
+WebRTC is built for sending media P 2 P between clients, but can accomadate data.
+
+Also, WebRTC sends data without having to go through servers. They are suitable for low latency messaging solution where Websockets are slow or if you need to pass data across parties without going through servers.
