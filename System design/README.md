@@ -39,4 +39,4 @@ It can also use to perform routing to different services (endpoints) and load ba
 
 It can also replace multiple api calls with one call, serve static content and cache response.
 
-Adapter to newer versions of protocols (eg. convert http2 to http) and to expose your service url for public usage
+Adapter to newer versions of protocols (eg. convert http2 to http) and to expose your service url for public usage (keep track of client usage and billing them)
