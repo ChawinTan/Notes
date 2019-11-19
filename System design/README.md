@@ -27,6 +27,26 @@
 
 # Useful components in system design
 
+# Scaling
+
+## Horizontal
+Buy more machines
+
+1. Load balancing required
+2. Back ups should one machine fail
+3. Network calls (slow)
+4. Data consistency is an issue
+5. Scales linearly (well)
+
+## Vertical
+Buy bigger machines
+
+1. Load balancing not required
+2. Single point of failure
+3. Inter process communication
+4. Data is consistent
+5. Hardware limit
+
 1. Api gateway
 
 An api gateway has serveral features.
