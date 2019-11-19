@@ -52,6 +52,8 @@ Messaging queue is used for ...
 2. The server to prioritize the tasks (no need to do it in order)
 3. Persisting data
 
+A messaging queue is essentially assignment, load balancing, hearbeat and persistence in one package.
+
 # Useful components in system design
 
 1. Api gateway
