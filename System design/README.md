@@ -25,8 +25,6 @@
 
 1. needs a good architect
 
-# Useful components in system design
-
 # Scaling
 
 ## Horizontal
@@ -47,6 +45,15 @@ Buy bigger machines
 4. Data is consistent
 5. Hardware limit
 
+# Message queue
+
+Messaging queue is used for ...
+1. Enabling clients to multi-task (distribute its resources while waiting for api response)
+2. The server to prioritize the tasks (no need to do it in order)
+3. Persisting data
+
+# Useful components in system design
+
 1. Api gateway
 
 An api gateway has serveral features.
@@ -60,3 +67,18 @@ It can also use to perform routing to different services (endpoints) and load ba
 It can also replace multiple api calls with one call, serve static content and cache response.
 
 Adapter to newer versions of protocols (eg. convert http2 to http) and to expose your service url for public usage (keep track of client usage and billing them)
+
+2. Data bases
+
+Good for persisting data in queues
+
+Some useful fields:
+1. Id (which server handled which tasks)
+2. Done or not
+
+3. Notifier
+
+Can consist of a heartbeat mechanism and a load balancer.<br/>
+Heartbeat mechanism to know if server is still responding<br/>
+Load Balancer is there to ensure that should a server fail, incomplete task do not get duplicated in other queues as a result of principles like consistent hashing.
+
