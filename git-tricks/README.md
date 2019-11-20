@@ -17,3 +17,10 @@ Change to `fixup` to remove commit logs
 1. `git remote set-url origin __your origin__`
 2. `git remote remove origin`
 3. `git remote add origin __your origin__`
+
+## Upstream
+
+To keep your branch relevant if you (eg.) fork your repo from other repo and you want to keep it updated whenever the original author makes a change.
+
+1. `git remote add upstream https://......`
+2. `git pull upstream master`
