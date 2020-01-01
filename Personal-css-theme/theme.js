@@ -24,6 +24,12 @@ const theme = {
         webkitTransform: "translate(-50%, -50%)",
         transform: "translate(-50%, -50%)"
     },
+    relativeCentering: {
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    },
     link: {
         color: "#0084b4",
         fontFamily: "Comic Sans MS"
