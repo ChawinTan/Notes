@@ -10,7 +10,12 @@ Mac:
 - Option+Return
 
 ## ToolBar symbol
-Enable Autoconnection to Parent  
+Enable Autoconnection to Parent - the U shape symbol<br/>
+Default Margins - to the right of Enable Autoconnection<br/>
+Right click -> show baseline -> baseline (text) anchor <br/>
+
+## String resource
+App > res > values > strings.xml
 
 ## Android upward navigation button
 
@@ -25,3 +30,19 @@ Inside `app` > `manifests` > `AndroidManifest.xml`, locate the `<activity>` tag 
         android:value=".MainActivity" />
 </activity>
 ```
+
+## An Intent
+It takes in a context and a class (activity).<br/>
+- You need to create the `Child activity class`.
+Activity class is a child of context.<br/>
+`putExtra()` method takes in a public constant, packagename.const_name and the value mapped to the constant.
+
+## Child Activity
+Get the intent via `getIntent` method<br/>
+Get message input from intent<br/>
+Find view via `findViewById` method<br/>
+set text
+
+## Important things to remember
+- event methods must be compatible to what is defined, eg: android:onClick
+
