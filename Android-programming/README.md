@@ -4,7 +4,7 @@ Notes for android programming
 
 ## Auto import
 
-Windows:
+Windows:<br/>
 - Alt+Enter
 Mac:
 - Option+Return
