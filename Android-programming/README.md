@@ -33,10 +33,15 @@ Inside `app` > `manifests` > `AndroidManifest.xml`, locate the `<activity>` tag 
 ```
 
 ## An Intent
+An intent can be thought of as a glue between activities, when launching them. Essentially a passive data structure.
+
 It takes in a context and a class (activity).<br/>
 - You need to create the `Child activity class`.
 Activity class is a child of context.<br/>
 `putExtra()` method takes in a public constant, packagename.const_name and the value mapped to the constant.
+
+## Inflator
+Used to convert xml files into view objects. Used when you need to customize each view in a (eg:, list)
 
 ## Child Activity
 Get the intent via `getIntent` method<br/>
