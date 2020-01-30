@@ -24,3 +24,11 @@ To keep your branch relevant if you (eg.) fork your repo from other repo and you
 
 1. `git remote add upstream https://......`
 2. `git pull upstream master`
+
+## Reset password
+
+Mac
+1. `git config --global credential.helper osxkeychain` or `git config --global --unset user.password`, then type the command you want to execute
+
+Windows
+1. `git config --global credential.helper wincred`
