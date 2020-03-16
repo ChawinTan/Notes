@@ -26,5 +26,8 @@ Worker connections is the number of connections that each process can handle sim
 1. `brew install nginx`
 2. `brew services start nginx`
 3. `curl http://127.0.0.1:8080`
+4. `brew services restart nginx`
+5. `brew services stop nginx`
 
-
+## Other useful commands
+1. `brew services list`
