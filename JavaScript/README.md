@@ -29,3 +29,6 @@ Var also uses hoisting. It means variables declared with a var will be undfined 
 
 Const is similar to let, just that once you defined it, the value cannot be changed.
 
+## Jsx
+Essentially syntatic sugar for `React.createElement`. It is compiled by Babel (or other preprocessors). Lets you write html or xml like syntax inside Javascript. Declarative syntax used to express the virtual dom.
+
