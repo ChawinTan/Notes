@@ -19,3 +19,11 @@ Docker hub - github of docker. pulls images if it is not in your system.
 - `docker container run -d -p 8080:80 --name mynginx nginx` - (-d = detach mode), publish customName, name of container
 - `docker stop container_name` - stop container
 - `docker container run -d -p 3306:3306 --name mysql --env MYSQL_ROOT_PASSWORD=123456 mysql ` - for setting environmental variables
+- `docker container exec -it mynginx bash` - bash into nginx container and see all the files
+- `exit` - exit the container you bash into
+- `docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx` - replace the file in the original directory with the file in your existing directory
+
+## Useful links
+
+https://gist.github.com/bradtraversy/89fad226dc058a41b596d586022a9bd3
+
