@@ -22,8 +22,23 @@ Docker hub - github of docker. pulls images if it is not in your system.
 - `docker container exec -it mynginx bash` - bash into nginx container and see all the files
 - `exit` - exit the container you bash into
 - `docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx` - replace the file in the original directory with the file in your existing directory
+- `docker image build -t boaringsquare/test-website .` - build your docker image
+- `docker push boaringsquare/test-website` - push image into docker account
+- `docker login` - for authentication 
 
 ## Useful links
 
 https://gist.github.com/bradtraversy/89fad226dc058a41b596d586022a9bd3
+
+Example of a `DockerFile`
+
+```
+FROM nginx:latest
+
+WORKDIR /usr/share/nginx/html
+
+COPY . .
+```
+
+
 
