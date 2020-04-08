@@ -65,6 +65,7 @@ services:
 ```
 
 - run `docker-compose up`
+- `docker-compose down` - removes images and connections (if any)
 
 ## Running your app in a container
 
