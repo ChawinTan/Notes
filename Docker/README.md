@@ -40,5 +40,53 @@ WORKDIR /usr/share/nginx/html
 COPY . .
 ```
 
+## Using docker compose
 
+Need to create a `docker-compose.yml file`
 
+Eg:
+
+```
+version: '3'
+services:
+    app:
+        container_name: docker-node-mongo
+        restart: always
+        build: .
+        ports:
+            - '80:3000'
+        links:
+            - mongo
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - '27017:27017'
+```
+
+- run `docker-compose up`
+
+## Running your app in a container
+
+Eg:
+
+```
+FROM node:10
+
+# working directory - where my app will live
+WORKDIR /usr/src/app
+
+# copy package.json into working directory
+COPY package*.json ./ 
+
+# npm install inside the working directory of the container
+RUN npm install
+
+# Copy everything here into container
+COPY . .
+
+EXPOSE 3000
+
+# run the command to start the app
+CMD ["npm", "start"]
+```
