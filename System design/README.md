@@ -84,3 +84,37 @@ Can consist of a heartbeat mechanism and a load balancer.<br/>
 Heartbeat mechanism to know if server is still responding<br/>
 Load Balancer is there to ensure that should a server fail, incomplete task do not get duplicated in other queues as a result of principles like consistent hashing.
 
+# Pub sub model
+
+## Pub Sub vs Req Res
+
+Advantages:
+- De coupling
+- consistent data storage
+- Single point of failure
+- Message persistence - guarantees message will be passed to child services at least once
+- scalable - can easily hook a new service to a message broker
+
+
+Disadvantages:
+- no atomicity, cannot use for mission critical systems where response can only be true or false
+- developers need to configure code to guarantee idempotency
+
+Example:
+
+Take for example the system below:
+
+```
+Client -> System 1 -> System 2 -> System 3 and 4
+                   -> database1-> database2
+```
+
+In a req res model, when a failure happens at system 4, system 1 might still be waiting for a response from 4. Also, databases 1 and 2 might have multiple records of the same data change from system 1 and 2. It is also hard to understand where the system fails since there are coupling between different systems.
+
+In a Pub sub model, direct connections with services can be handled with a message queue.
+
+```
+System 1 -> message queue -> system 2
+                          -> system 3
+```
+
