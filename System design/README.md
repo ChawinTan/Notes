@@ -52,7 +52,7 @@ Messaging queue is used for ...
 2. The server to prioritize the tasks (no need to do it in order)
 3. Persisting data
 
-A messaging queue is essentially assignment, load balancing, hearbeat and persistence in one package.
+A messaging queue is essentially assignment, load balancing, hearbeat and persistence in one package. Principles of load balancing ensures that should a service goes down, unfinish task in the message list would not be duplicated across servers.
 
 # Useful components in system design
 
