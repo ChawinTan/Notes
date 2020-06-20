@@ -107,3 +107,99 @@ const (
 ```
 
 The above means shift the bit 100 places left for Big and 99 places right for small.
+
+## For loop
+
+Go has only one way to loop - the for loop.
+
+```
+for i:=0; i<10; i++ {
+    // do something
+}
+```
+
+You can use the for loop like a while loop:
+
+```
+for sum < 1000 {
+    // do something
+}
+```
+
+An infinite loop:
+
+```
+for {
+
+}
+```
+
+## If statements
+
+Similar to for loops, the expression (condition to be evaluated) does not need to be surrounded by paranthees ()
+
+If statement can start with a short statement to execute before the condition like a for loop:
+
+```
+if v:= math.pow(x, n); v < lim {
+    return v
+}
+return lim
+
+// This code returns v if v is smaller than lim. Else, it returns lim
+```
+
+Can only return v within the scope of the if statement.
+
+V is also accessible within the else block.
+
+## Switch statement
+
+Switch statements also can have an expression within the `switch`. It does not need to `break` unlike other languages as the break statement is provided. Also, switch cases need not be constants and values involved does not need to be integers.
+
+```
+switch i=expression; i {
+    case '...':
+        do something
+    default:
+        do something
+}
+```
+Evaluates the statements from top to bottom and stop when a case succeeds.
+
+Switch without a condition is the same as `switch true`
+
+## Defer
+
+Defer statement defers the execution of a function till the surrounding returns
+
+```
+defer fmt.Println("world")
+
+fmt.Println("hello)
+
+This function would print "hello" first followed by "world" as the first statement is deferred till the rest of the statements are executed.
+```
+
+Deferred function calls are pushed into a stack. Deferred calls are executed in the last in first out order.
+
+```
+fmt.Println("counting")
+
+for i:=0; i < 10; i++ {
+    defer fmt.Println(i)
+}
+
+fmt.Println("done")
+
+results:
+
+counting
+done
+9
+8
+.
+.
+.
+1
+```
