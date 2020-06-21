@@ -203,3 +203,81 @@ done
 .
 1
 ```
+
+## Pointers
+
+A pointer holds the memory address of a value
+
+`&` operand generates a pointer to the operand
+
+`*` operand denotes the pointer's underlying value. This is know as dereferencing.
+
+```
+var p *int // declare a pointer
+
+i := 42
+p = &i // points to i variable
+
+*p = 21 // change the value of i through pointer p
+
+fmt.Println(*p) // prints the value of i
+fmt.Println(p) // prints the address of i, eg: 0xc000002c40
+```
+
+## Structs
+
+A struct is a collection of fields.
+
+Struct fields are accessed using a dot.
+
+We can also access field of a struct through a struct pointer. There is no need for explicit dereferencing however (*p.X)
+
+Struct literal denotes a newly allocated struct value by listing the values of it's fields. You can list just some of the fields by using the `Name: Value` syntax.
+
+```
+type MyStruct struct {
+    X int
+    Y int
+}
+
+v := MyStruct{1, 2}
+fmt.Println(v.X) // prints 1
+
+v2 := MyStruct{X: 3} // Y = 0 is implied
+
+p := &v   // assign v to a pointer p
+fmt.Println(p.X)
+```
+
+## Arrays
+
+An array's length is part of it's type, so it can't be resized.
+
+```
+var myArray [size]type
+```
+
+## Slices
+
+Capable of being dynamically sized. Is of type `[]type`.
+
+Slices do not store data but only describes a section of an underlying array. Changing the elements of a slice modifies the corresponding elements of its underlying array. Other slices that share the same array would also be affected.
+
+```
+arr := [6]int{1,2,3,4,5,6}
+var s []int = arr[low: high]
+```
+
+### Slice literals
+
+Slice literals are like arrays without length. It creates a slice that references the underlying array.
+
+Can use slice default values too: 0 for the high bound and length of array for the low bound
+
+eg:
+
+```
+s := []int{1,2,3}
+is equivalent to
+s := [3]{1,2,3}
+```
