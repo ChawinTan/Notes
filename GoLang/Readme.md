@@ -281,3 +281,53 @@ s := []int{1,2,3}
 is equivalent to
 s := [3]{1,2,3}
 ```
+
+A slice has a lenghth and capacity.
+
+```
+s = []int{1,2,3,4,5}
+s = s[:0]
+
+c := cap(s)  // cap of s
+l := len(s)  // length of l
+```
+
+A slice without any value is `nil` It has 0 caps and 0 length
+
+```
+var s[]int
+if s == nil { do something }
+```
+
+###  Creating a slice with make
+
+Dynamically sized slices can be created using the built in function `make`
+
+```
+a := make([]int, 5 , 10) => array type, len, caps
+```
+
+A slice of slice:
+
+```
+test := [][]type {
+    []type{.......}
+}
+```
+
+### Appending a slice
+
+```
+var s []int
+s = append(s, value .....) // can append more than one value
+```
+
+The `range` form of for loop iterates over a slice or a map. Two values are returned: first is the index and the second is a copy of the element
+
+Can skip the index or value by assigning `_` to the value.
+
+```
+for i, v := range pow {
+    do something ...
+}
+```
