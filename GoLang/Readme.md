@@ -331,3 +331,45 @@ for i, v := range pow {
     do something ...
 }
 ```
+
+An example of implementing slice related functions
+
+```
+func Pic(dx, dy int) [][]uint8 {
+	pic := make([][]uint8, dy)
+	
+	for x:=0; x<dy; x++ {
+		pic[x] = make([]uint8, dx)
+	}
+	
+	for y:=0; y<dy; y++ {
+		for i:=0; i<dx; i++ {
+			pic[y][i] = uint8((y+i)/2)
+		}
+	}
+	
+	return pic
+	
+}
+```
+
+## Maps
+
+`Nil` map has no keys nor can keys be added. `make` function returns a map of the given type initialized.
+
+Keys are required for Map literals. If the top level type of the value/key is just a type name, we can omit from the elements of the literal.
+
+```
+var m map[type]type
+m[key] = value
+
+var m map[type]type{   // map literals
+    key: value,        // don't forget the comma!
+}
+```
+
+Retrieving an element: `elem = m[key]`
+
+Deleting an element: `delete(m, key)`
+
+Test if a key is present: `elem, ok = m[key]` // will return true to ok if present, false if not
