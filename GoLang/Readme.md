@@ -391,3 +391,36 @@ func WordCount(s string) map[string]int {
 	return res
 }
 ```
+
+## Function values
+
+Functions are values and they can be used as function arguments and return values
+
+Functions may also be closures, that is function bound to external variables.
+
+```
+func outerfunc(func innerFunc(args type) returnType) return type { return innerFunc(args) }
+
+func closure() func(type) type {
+    // external var
+    return func(x type) {
+        // do something with external var
+        return value
+    }
+}
+
+myFunc = closure()
+closure(args)
+```
+
+An example 
+
+```
+func fibonacci() func() int {
+	x, y, z := 0, 1, 0
+	return func() int {          // inner function can modify the outer variables
+		z, x, y = x, y, x + y
+		return z
+	}
+}
+```
