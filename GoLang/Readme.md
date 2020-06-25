@@ -373,3 +373,21 @@ Retrieving an element: `elem = m[key]`
 Deleting an element: `delete(m, key)`
 
 Test if a key is present: `elem, ok = m[key]` // will return true to ok if present, false if not
+
+An example:
+
+```
+func WordCount(s string) map[string]int {
+	temp := strings.Split(s, " ")
+	res := map[string]int{}
+
+	for _, i := range temp {
+		if _, ok := res[i]; ok {
+			res[i] += 1
+		} else {
+			res[i] = 1
+		}
+	}
+	return res
+}
+```
