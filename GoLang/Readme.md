@@ -424,3 +424,100 @@ func fibonacci() func() int {
 	}
 }
 ```
+
+## Methods
+
+Can define methods on types. A method is a function with special receiver argument.
+
+Receiver receives the method and appears in its own argumet list between func keyword and method name.
+
+Can also declare method on non-struct types. 
+
+```
+type Vertex struct {
+    X,Y float64
+}
+
+func (v vertex) Abs() float64 {  // vertex is the receiver, Abs is the method
+    return // do something
+}
+
+v := Vertex{3,4}
+fmt.Println(v.Abs())
+
+type MyFloat float64  // declare your type
+
+func (f MyFloat) Abs() float64 {
+    return // do something
+}
+
+f := MyFloat(float)
+f.Abs()
+```
+
+### Pointer receivers in methods
+
+Can declare methods with pointer receivers.
+
+Methods with pointer receivers can modify the value to which the receiver points to. A function would need a pointer argument but methods with pointer receivers can take either a value or a pointer as the receiver when they are called.
+
+There are 2 reasons to use pointer receivers:
+
+1) Method can modify the value that its receiver points to
+2) Avoid copying the value on each method call
+
+In general, all methods on a given type should have either value or pointer receivers but not a mixture of both.
+
+Eg:
+
+```
+type Vertex struct {
+    X, Y float64
+}
+
+func (v Vertex) method1() float64 {
+    return v.X + v.Y
+}
+
+func (v *Vertex) method2(f float64) {   // pointer receiver values X and Y can be modified
+    v.X = v.X*f
+    v.Y = v.Y*f
+}
+
+v := Vertex{4,5}
+v.method2(10)
+Go interpretes this statement as &v.method2(10)
+```
+
+## Interface
+
+Defined as a set of method signatures. A value of interface can hold any value that implement those methods. 
+
+There is no explicit implementation for interface.
+
+```
+type Abser interface {
+    Abs() float64
+}
+
+type MyFloat float64
+
+type Vertex struct {
+    X,Y float64
+}
+
+func (f MyFloat) Abs() float64 {
+    // do something
+}
+
+func (v *Vertex) Abs() float64 {
+    // do something
+}
+
+var a Abser
+f := MyFloat()
+v := Vertex{3,4}
+
+a = f // a MyFloat implements abser
+a = &v // a *Vertex implememts Abser
+```
