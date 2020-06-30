@@ -495,6 +495,14 @@ Defined as a set of method signatures. A value of interface can hold any value t
 
 There is no explicit implementation for interface.
 
+Interface values an be thought of as a tuple of a value and a concrete type. (value, type). Executes the method of the same name on its underlying type.
+
+An interface value that holds a nil concrete value is itself non-nill
+
+Nil interface holds neither value nor concrete type.
+
+Empty interfaces are interface type that holds zero methods. Empty interface may hold values of any type.
+
 ```
 type Abser interface {
     Abs() float64
@@ -517,7 +525,21 @@ func (v *Vertex) Abs() float64 {
 var a Abser
 f := MyFloat()
 v := Vertex{3,4}
+x := Vertex{}
 
 a = f // a MyFloat implements abser
 a = &v // a *Vertex implememts Abser
+a = &x // nill receiver
+
+var i interface{}
+```
+
+### Type Assertions
+
+Type assertions provides access to an interface value's underlying concrete value
+
+```
+t := i.(type) // where t is the value, i is the interface and T is the type
+
+t, ok := i.(type) // ok is true or false. ok value also prevents a panic
 ```
