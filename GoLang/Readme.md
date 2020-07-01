@@ -543,3 +543,93 @@ t := i.(type) // where t is the value, i is the interface and T is the type
 
 t, ok := i.(type) // ok is true or false. ok value also prevents a panic
 ```
+
+### Stringers
+
+A `Stringer` is a type that can describe itself as a string. The fmt and other packages look for this interface to print values.
+
+```
+type Stringer interface {
+    String() string
+}
+
+func (p type) String() string { ... }
+```
+
+## Errors
+
+`error` type is a built in interface similar to fmt.Stringer.
+
+The `fmt` package looks for the error interface when printing values.
+
+Calling code should handle errors by testing whether the error equals `nil`
+
+```
+type error interface {
+    Error() string
+}
+
+type MyError struct {
+    // parameters
+}
+
+func (e *MyError) Error() string {
+    return .....
+}
+
+func run() error {    // error interface that contains Error method
+    return &MyError{// parameter values}
+}
+
+func main() {
+    if err := run(); err != nil {
+        // do something
+    }
+}
+```
+
+An example
+
+```
+package main
+
+import (
+	"fmt"
+)
+
+type ErrNegativeSqrt float64
+
+func (e ErrNegativeSqrt) Error() string {
+	return fmt.Sprintf("can not Sqrt negative number:%v", float64(e))
+}
+
+func Sqrt(x float64) (float64, error) {
+	if x < 0 {
+		return 0, ErrNegativeSqrt(x)
+	}
+	
+	z := float64(1)
+	
+	for i:=10; i > 0; i-- {
+		z -= (z*z - x)/(2*z)
+	}
+	
+	return z, nil
+}
+
+func main() {
+	a := make([]float64, 2)
+	
+	a[0] = 2
+	a[1] = -2
+	
+	for _, num := range a {
+		if res, err := Sqrt(num); err != nil {
+			fmt.Println(err)
+		} else {
+			fmt.Println(res)
+		}
+	}
+
+}
+```
