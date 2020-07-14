@@ -47,3 +47,18 @@ Used to declare constants with a specific type. It is a good practice to define 
 `extern` storage class is used t give a reference of a global variable that is visible to all program files.
 
 `mutable` only applies to class objects. Mutable member can be modified by a const member function.
+
+## Pointers
+
+Pointer operations
+
+```
+int var = 20;
+int *p // declare pointer variable
+
+p = &var // store the address of var
+
+count << *p << endl // print the value of var through p
+```
+
+
