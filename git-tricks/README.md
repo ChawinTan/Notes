@@ -32,3 +32,16 @@ Mac
 
 Windows
 1. `git config --global credential.helper wincred`
+
+## Git mergin on ubuntu
+
+If you encounter an editor that requires you to type some commit message when you `git pull master` to merge but can't seem to use vim commands ... do the below instead.
+
+```
+1. Type some message
+2. Press Ctrl C O
+3. Type the file name and press Enter
+4. Press Ctrl X to exit
+```
+
+
