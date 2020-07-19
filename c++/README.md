@@ -61,4 +61,33 @@ p = &var // store the address of var
 count << *p << endl // print the value of var through p
 ```
 
+## References
+
+Cannot have null references and must be initialized when created and must assume it is pointing to something legitimate. It cannot be changed to refer to another obect once initialized.
+
+```
+int i = 17;
+int& r = i;
+```
+
+Passing by reference and pointers in a function call affect the final value of the argument since the reference/addreess is used to access the actual argument in the call.
+
+Pass by value copies the actual value, hence does not affect the actual argument.
+
+```
+swap(&x, &y);
+```
+
+## Structure
+
+`struct` is a user defined data type which allows to combine data items of different kinds. 
+
+eg:
+
+```
+struct myType {
+	type definition;
+	char author[50]
+}
+```
 
