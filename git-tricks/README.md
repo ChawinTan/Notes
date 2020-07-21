@@ -44,4 +44,23 @@ If you encounter an editor that requires you to type some commit message when yo
 4. Press Ctrl X to exit
 ```
 
+## Undo previous add/commit/pull
+
+Undo last commit while keeping previous changes (unstaged)
+
+`git reset HEAD^`
+
+After the above, if you want to remove the unstaged changes, run
+
+`git reset --hard HEAD`
+
+Undo last add
+
+`git reset`
+
+Undo last pull
+
+`git reset --hard <commit number>`, where `<commit number>` is found by `git reflog` 
+
+Alternatively, you can just do `git reset --hard` to revert to previous state before pull
 
