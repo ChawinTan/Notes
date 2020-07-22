@@ -91,3 +91,52 @@ struct myType {
 }
 ```
 
+## Classes and objects
+
+Data and functions within a class are called members of a class. Members are assumed to be private by default.
+
+Friend functions - not considered members of a class and has full access to private and protected members of a class.<br />
+copy constructor - a constructor which creates an object by initializing it with an object of the same class which has been created previously.<br />
+this - pointer to the object itself<br />
+
+```
+class Box {
+	public:
+		double length;
+		double width;
+		double height;
+}
+
+Box box1; // declare box1 of type Box
+box1.length = 5.0 // accessing member
+```
+
+## Inheritance
+
+Allows us to define a class in terms of another class. New class is called the derive class while existing class is called the base class. The idea of inheritance implements the `Is-a` relationship.
+
+```
+class Shape {
+	public: void myFunc(){...}
+
+	protected: 
+		int width;
+		int height
+}
+
+class Square: public Shape {
+	public:
+		int getArea() { return width*height };
+}
+```
+
+A derived class can access all non private members of it's base class, (public and protected).
+
+## Overloading
+
+Overloading allows for multiple definitions for the same function name in the same scope. They must differ from each other by the types and/or number of arguments in the argument list. Cannot overload function declarations that differ only by return type.
+
+```
+void print(int i)
+void print(double i) // different type/number or argument
+```
