@@ -140,3 +140,40 @@ Overloading allows for multiple definitions for the same function name in the sa
 void print(int i)
 void print(double i) // different type/number or argument
 ```
+
+## Polymorphism
+
+Functions within related child classes with the same name and parameters but different definitions. This can be done by using the `virtual` keyword in front of the function in the base class. This is to prevent static linkage of the function call. Without the `virtual` keyword, the function will be set once by the compiler as the versin defined in the base class.
+
+```
+class Shape {
+	protected:
+		 int width, height;
+	public:
+		virtual int area() { //do something };
+	
+}
+```
+
+## Abstract classes
+
+To provide an appropriate base class for child classes to inherit
+
+```
+class Shape {
+	protected:
+		int width;
+		int height;
+	public:
+		virtual int getArea() = 0 // virtual, generic function without implementation
+		void setHeight(int h) {height = h};
+		void setWidth(int w) {width = w}; 
+}
+
+class Rectangle: public Shape {
+	public:
+		int getArea() { return width*height };  
+}
+```
+
+
