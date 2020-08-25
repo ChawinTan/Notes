@@ -55,3 +55,5 @@ Represented by the command (Q). Takes in 2 arguments (x1, y1, x, y). The first p
 ### T
 
 Shortcut for extending Q. Takes in only one argument, (x, y) which is where the curve will end. the bezier curve is inferred from the previous curve.
+
+Bezier curves can be represented by B(t), where t can be used to construct intermediate points and point B(t) can be inferred as a result.
