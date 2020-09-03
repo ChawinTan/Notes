@@ -69,4 +69,8 @@ Alternatively, you can just do `git reset --hard` to revert to previous state be
 
 https://dev.to/dyarleniber/setting-up-a-ci-cd-workflow-on-github-actions-for-a-react-app-with-github-pages-and-codecov-4hnp
 
+## Useful docs
 
+### Workflow Yaml syntax
+
+https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
