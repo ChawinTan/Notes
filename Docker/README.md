@@ -4,6 +4,8 @@
 - One server, one OS
 - Compared to VMs, one server, seperate OS for each VM
 
+Dockerfile creates a docker image. Containers need to run an image to exist. Containers are dependent on images but not vice versa.
+
 ## Commands
 Management commands and commands.<br/>
 Docker hub - github of docker. pulls images if it is not in your system. 
