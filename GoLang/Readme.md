@@ -633,3 +633,10 @@ func main() {
 
 }
 ```
+
+## Sourcing
+
+Before running go commands in a terminal:
+
+`export PATH=$PATH:/usr/local/go/bin`
+
