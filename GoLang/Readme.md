@@ -640,3 +640,6 @@ Before running go commands in a terminal:
 
 `export PATH=$PATH:/usr/local/go/bin`
 
+## Other tips
+
+https://www.callicoder.com/golang-installation-setup-gopath-workspace/
