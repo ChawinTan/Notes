@@ -93,3 +93,11 @@ EXPOSE 3000
 # run the command to start the app
 CMD ["npm", "start"]
 ```
+
+## Docker Volumes
+
+Docker uses a read-only image layer and adds a read-write layer on top, where changes are applied. This is called union file system. To persist and share data between containers, docker uses volumes where they are directories that are outside of the union file system and exist as normal directories and files on the host filesystem.
+
+https://blog.container-solutions.com/understanding-volumes-docker#:~:text=In%20order%20to%20be%20able,files%20on%20the%20host%20filesystem.
+
+
