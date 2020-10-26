@@ -100,4 +100,8 @@ Docker uses a read-only image layer and adds a read-write layer on top, where ch
 
 https://blog.container-solutions.com/understanding-volumes-docker#:~:text=In%20order%20to%20be%20able,files%20on%20the%20host%20filesystem.
 
+An example command to mount locally:
+
+`sudo docker run -v ~/romi-dashboard:/root/romi-dashboard -it docker.pkg.github.com/osrf/romi-dashboard/e2e`
+
 
