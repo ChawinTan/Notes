@@ -31,7 +31,26 @@ Fibre - use light to represent binary data
 
 Router is a device that can forward data between independent network. Operates at layer 3.
 
-## Servers abd client
+## Servers and client
 
 What it is called depends on its purpose of existance.
+
+## Ethernet and MacAddresses
+
+CSMA/CD is used to determine when the communications channels are clear, and when a device is free to transmit data. Each device in the collision domain waits for a random amount of time before sending data again.
+
+MAC address = media access control address. It is a globally unique identifier attached to an individual network interface. A 48 bit number. The first 3 octets of a mac address are known as OUI (organizationally unique identifier). (manufactuarer:product)
+
+Ethernet uses Mac addresses to ensure that the data it sends has both an address for the machine that sent the transmission and the machine that the transmission was intended to receive.
+
+## Unicast Multicast and Broadcast
+
+A unicast transmission is always meant for just one receiving address. Represented by setting the least significant bit in the first octet of a destination address to 0.
+
+If the least significant bit in the first octet of a destination address is set to one, it is a multicast frame. Can accepted or discarded base on criteria other than Mac Addresses.
+
+Broadcast is sent to all devices on the lan. Ethernet broadcast address is all Fs.
+
+
+Ethernet itself only reports on data integrity, not recovery.
 
