@@ -104,4 +104,8 @@ An example command to mount locally:
 
 `sudo docker run -v ~/romi-dashboard:/root/romi-dashboard -it docker.pkg.github.com/osrf/romi-dashboard/e2e`
 
+## Networking
 
+When we want two different container in different networks to interact with each other, we can set up a known network in docker compose in one of the service. We can then connect to this service through the gateway ip address of the known network. Docker bridge would then perform an NAT and forwards the traffic to the exposed port.
+
+When both containers are in the same network, linux uses arp to get the mac address and can connect to the service container via its IP address directly
