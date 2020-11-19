@@ -54,3 +54,16 @@ Broadcast is sent to all devices on the lan. Ethernet broadcast address is all F
 
 Ethernet itself only reports on data integrity, not recovery.
 
+## IP Address (ipv4)
+
+32 bit long numbers made up of 4 octects of 8 bits. Biggest number is 2^8-1(255).  IP addresses belong to networks, not devices attached to networks. Static ip addresses are reserved for servers and network devices while dynamic ip addresses are reserved for clients.
+
+Ip datagram - header and payload
+
+Can be split into networkId and the hostId. NetworkId can be up to the first 3 number, depending on class, remaining for hostId. class A - (0-126), class B - (128-191), class C - (192-224). classs D - (224-239), used for multicasting, class E - remaing, used for testing
+
+## ARP
+
+Address resolution protocol
+
+Arp table - list of ip addresses(network) and mac addresses(hardware) associated with them
