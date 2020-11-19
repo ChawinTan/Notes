@@ -67,3 +67,15 @@ Can be split into networkId and the hostId. NetworkId can be up to the first 3 n
 Address resolution protocol
 
 Arp table - list of ip addresses(network) and mac addresses(hardware) associated with them
+
+## Subnetting
+
+Process of taking a very large network and splitting it up into many individual and smaller subnetworks
+
+An example of a subnet mask:
+
+255.255.255.0 -> 11111111 11111111 11111111 00000000, means that only 2^8 bits are available for host networking, shorthand way to write this is (your ip)/24, where 24 is the number of 1s in the subnet mask
+
+Link to calculate subnet, subnet range 
+
+(https://www.pluralsight.com/blog/it-ops/simplify-routing-how-to-organize-your-network-into-smaller-subnets)
