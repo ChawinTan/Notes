@@ -76,6 +76,32 @@ An example of a subnet mask:
 
 255.255.255.0 -> 11111111 11111111 11111111 00000000, means that only 2^8 bits are available for host networking, shorthand way to write this is (your ip)/24, where 24 is the number of 1s in the subnet mask
 
-Link to calculate subnet, subnet range 
+Link to calculate subnet, subnet range<b/> 
+https://www.pluralsight.com/blog/it-ops/simplify-routing-how-to-organize-your-network-into-smaller-subnets
 
-(https://www.pluralsight.com/blog/it-ops/simplify-routing-how-to-organize-your-network-into-smaller-subnets)
+## Simple binary math
+
+x bit can represent 2^x numbers.
+
+Two most important operators are AND and OR.
+
+`OR`<b/>
+If x OR y is true, then z is true
+
+`AND`<b/>
+If x and y is true, then z is true
+
+## CIDR
+
+Classless inter domain routing. Uses the (ip)/xx format to determine how many host networks are available and not through network classes
+
+## Routing
+
+Basic routing steps:
+
+1) Receive the data packet
+2) examines the destination ip address
+3) looks up ip destination network in routing table
+4) forwards traffic to destination
+
+
