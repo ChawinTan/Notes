@@ -104,4 +104,11 @@ Basic routing steps:
 3) looks up ip destination network in routing table
 4) forwards traffic to destination
 
+## Routing tables
+
+1) destination network
+2) next hop - ip address of the computer intended to receive for the destination network
+3) total hops - keep track of how far destination is and decides best path
+4) interface
+
 
