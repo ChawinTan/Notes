@@ -111,4 +111,43 @@ Basic routing steps:
 3) total hops - keep track of how far destination is and decides best path
 4) interface
 
+## Non Routable address space
+
+1) 10.0.0.0/8
+2) 172.16.0.0/12
+3) 192.168.0.0/16
+
+All 3 are available for use in internal network. Routed by interior gateway protocols but not exeterior gateway protocols
+
+## Ports
+
+Transport layer handles multiplexing and demultiplexing through ports. Ports are 16 bit numbers.
+
+## Three way handshake
+
+Control flags:
+
+1) URG - urgent (1/0)
+2) ACK - acknowledge
+3) PSH - push (transmitting device wants the receiving device to push currently buffered data to the application on the receiving end as soon as possible)
+4) RST - reset (One of the sides of TCP hasn't been able to properly recover from a series of missing or malformed segments)
+5) SYN - synchronize (Used when establishing a TCP connection and makes sure the receiving end knows to examine the sequence number field)
+6) FIN - finish (no more data to be send, connection can be close)
+
+Computer A is transmitting device. Computer B is receving device
+
+1) Computer A sends a TCP segment with a SYN flag send, tells B where the sequence number starts
+2) Computer B sends back a TCP segment with a SYN and ACK flag, acknowledge sequence number
+3) Computer A sends back a segment with an ACK flag set.
+
+Connection establish, start sending data! Ensures that they are speaking the same protocol and are able to understand each other.
+
+## 4 way handshake (closing connection)
+
+Computer B wants to close.
+
+1) computer B sends a FIN flag.
+2) computer A sends back a segment with an ACK flag.
+3) if computer A is ready to close a connection, it responds back with an FIN flag
+4) computer B responds back with an ACK flag to close
 
