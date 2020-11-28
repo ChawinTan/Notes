@@ -151,3 +151,19 @@ Computer B wants to close.
 3) if computer A is ready to close a connection, it responds back with an FIN flag
 4) computer B responds back with an ACK flag to close
 
+## TCP sockets
+
+1) LISTEN
+2) SYN_SENT
+3) SYN-RECEIVED
+4) FIN_WAIT
+5) CLOSE_WAIT
+6) CLOSED
+
+## UDP (connectionless protocol)
+
+Used to send data that is not crucial to have all data to be received. Does not establish a connection through the various handshakes. Does not incur the overhead of redundant data to ensure connection is established through the various handshake models.
+
+## Firewall
+
+A device that blocks traffics that meets certain criteria. Block and allow traffic to certain ports on network level.
