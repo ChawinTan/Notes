@@ -36,5 +36,27 @@ const theme = {
     },
     navBars: {
         backgroundColor: "#ffa500"
-    }
+    },
 };
+
+// repeated fading animation material ui syntax
+const useStyles = makeStyles((theme) => ({
+  "@keyframes warningAnimation": {
+    "0%": {
+      textShadow: `0 0 2rem ${theme.palette.error.main}`,
+    },
+    "50%": {
+      textShadow: `0 0 2rem transparent`,
+    },
+    "100%": {
+      textShadow: `0 0 2rem ${theme.palette.error.main}`,
+    }
+  },
+  root: {
+    padding: '1rem',
+    animation: '$warningAnimation 3000ms linear infinite',
+  }
+}));
+
+
+
