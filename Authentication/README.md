@@ -32,4 +32,7 @@ https://flaviocopes.com/jwt/#:~:text=Learn%20the%20basics%20of%20JWT%20and%20how
 
 https://medium.com/@sureshdsk/how-json-web-token-jwt-authentication-works-585c4f076033
 
+### Self signed pem file
+
+`openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem`
 
