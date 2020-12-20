@@ -1,5 +1,7 @@
 # NGINX
 
+nginx is a reverse proxy, that is an intermediary on the server that you are connecting to. From the perspective of you (the client), it would seem like you are receiving data from the reverse proxy server itself.
+
 1. Provides http server capabilities
 2. Uses Non threaded and event driven architecture
 3. Web server for reverse proxying, caching and load balancing
