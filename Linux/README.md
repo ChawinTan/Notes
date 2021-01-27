@@ -18,5 +18,8 @@ https://drive.google.com/drive/folders/1WlpFNP9yXLt4Gho23WS01b-hxRTHocSs
 
 /*** remember to change version from sierra to just mac os x 64bit ***/
 
+### Debugging a mouse that is connected but can't move
+
+`sudo /etc/init.d/bluetooth restart`
 
  
