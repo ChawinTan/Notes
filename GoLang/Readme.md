@@ -640,6 +640,24 @@ Before running go commands in a terminal:
 
 `export PATH=$PATH:/usr/local/go/bin`
 
+## Working with Modules
+
+[Example Project]: (https://github.com/ChawinTan/golang-example-project)
+
+1) create a folder `mymodule`. `cd` into the folder and create a file with the same name, `mymodule.go`
+2) write your code
+3) run `go mod init example.com/mymodule` to create your go.mod file
+4) `cd` out and create a directory and a file with your main function in it. let's call it `src/main.go`
+5) inside `main.go`, import your module, `import ( "example.com/mymodule")`
+6) run `go mod init main` to create your go.mod file for your main module
+7) inside the go.mod file of the main module, add this line of code `replace exmaple.com/mymodule => /directory_of_mymodule`
+8) go build
+
+#### useful links for modules
+
+[create module](https://golang.org/doc/tutorial/create-module)
+[use module in another module](https://golang.org/doc/tutorial/call-module-code)
+
 ## Other tips
 
 https://www.callicoder.com/golang-installation-setup-gopath-workspace/
