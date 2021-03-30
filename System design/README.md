@@ -118,3 +118,10 @@ System 1 -> message queue -> system 2
                           -> system 3
 ```
 
+## Parrelel vs concurrency
+
+Concurrency is used when there is a lot of waiting time, for example, a web server waiting for multiple request for different clients, or in general (IO) problems. The advantage in such scenarios is that the webserver can move ahead with other tasks while waiting for the slower tasks to finish.
+
+Parrelelism is used when the tasks involved does not require waiting and different threads can handle different task without having to depend on each other finishing. Most of the time taken is by the work and not waiting. And since most of the calculations are handled by the CPU, these are called CPU bound problems. Examples include computer vision, machine learning, image/audio processing etc ...
+
+
