@@ -1,0 +1,1 @@
+/usr/bin/c++   -DCERT_ROOT_DIR="\"/home/chawin/test-cpp/cpp-jwt/tests/certs\""   CMakeFiles/test_jwt_rsa.dir/test_jwt_rsa.cc.o  -o test_jwt_rsa  /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 

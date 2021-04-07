@@ -1,0 +1,1 @@
+/usr/bin/c++   -DCERT_ROOT_DIR="\"/home/chawin/test-cpp/cpp-jwt/examples/rsa_256\""   CMakeFiles/simple_ex1.dir/simple_ex1.cc.o  -o simple_ex1  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
