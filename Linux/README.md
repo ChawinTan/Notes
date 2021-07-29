@@ -22,4 +22,13 @@ https://drive.google.com/drive/folders/1WlpFNP9yXLt4Gho23WS01b-hxRTHocSs
 
 `sudo /etc/init.d/bluetooth restart`
 
+### Kill a process
+
+To find running processes:
+
+`sudo lsof -i -P -n | grep LISTEN`
+
+To kill a running process:
+
+`sudo kill -9 $(sudo lsof -t -i:<port-number>)`
  
