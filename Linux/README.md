@@ -31,4 +31,13 @@ To find running processes:
 To kill a running process:
 
 `sudo kill -9 $(sudo lsof -t -i:<port-number>)`
+
+### keys, ssh and funcky cloud stuff
+
+Private keys should be in the `.ssh` folder, without the `.gpg` behind.
+
+To log into a remote machine: `ssh -i ~/.ssh/[key-name] user@remoteAddress`
+
+`scp` -i ~/.ssh/key user@remoteAdd:/path/to/file path/to/local can be used to copy files from remote machine to local
+
  
