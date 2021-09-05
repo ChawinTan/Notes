@@ -51,6 +51,12 @@ When a state on a virtual dom is changed, a new virtual dom tree is created. The
 
 Updates to the read dom are also sent in batches.
 
+## State vs Props
+
+State is mutable while props are not.
+
+State is internal and controlled by the component while props are external and controlled by whatever renders the component.
+
 ## Webpack
 
 Webpack creates a bundle, which is a new package that consist of the bare minimum files that can be plugged in to the html file easily. This bundle is build using a dependency graph.
