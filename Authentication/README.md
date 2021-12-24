@@ -46,3 +46,8 @@ Used for authentication and for the client only. It is used to determine who som
 #### Access tokens
 
 Access tokens is used to grant a client access to an API. It is about "what are they allowed to do" and is usually build on Oauth2.0. They should not be used to authenticate a client since they don't containt any information about the client, hence unable to tell if the user has authenticated and when.
+
+#### TLS stuff
+
+One way TLS - TLS client to verify the identity of the TLS server, Front end verify backend
+Two way TLS - Client can verify the identity of the server while server would then verify the identity of the client
