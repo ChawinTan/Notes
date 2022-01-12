@@ -74,3 +74,8 @@ https://dev.to/dyarleniber/setting-up-a-ci-cd-workflow-on-github-actions-for-a-r
 ### Workflow Yaml syntax
 
 https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+
+### add ssh keys for multiple github accounts in one computer
+https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/ <br />
+https://gist.github.com/rosswd/e1afd2b0b0d515517eac - for one email, but same principle, just don't set email/user name to global if you have work and personal mails/accounts <br />
+https://gist.github.com/jexchan/2351996 - a little outdated but still somewhat useful
