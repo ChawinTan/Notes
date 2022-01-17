@@ -72,3 +72,5 @@ OpenId connect flow is the same as OAuth. The exceptions are
 An Id token is a jwt.
 
 Authorization server generates a clientId and client secret for all future OAth exchanges. Their sometimes known as App id and App secret.
+
+https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc
