@@ -51,3 +51,24 @@ Access tokens is used to grant a client access to an API. It is about "what are 
 
 One way TLS - TLS client to verify the identity of the TLS server, Front end verify backend
 Two way TLS - Client can verify the identity of the server while server would then verify the identity of the client
+
+### OAuth and OpenId
+
+OpenId is a layer built on top of OAuth. It adds login and profile information about the person who is logged in. OAuth is for authentication (logging in) while OpenId provides an identity. OpenId enables scenarios such as single sign-on (sso).
+
+OpenId connect flow is the same as OAuth. The exceptions are 
+
+* a scope of `openid` is used in the initial request
+* the client receives and `ID token` in addition to an Access token
+
+1. Resource owner gets the client (app) to send a request to an autherization server with the following (clientid, redirect uri, response type, scope)
+2. checks for an active session (resource owner logged in to the authorization server)
+3. Resource owner gives the client (app) the list of scopes and notifies the autherization server
+4. Authorization server returns the client (app) with an authorization code
+5. Resource owner and app gives the authorization code, client Id and client Secret to the authorization server
+6. authorization server returns with access token and id token
+7. client then uses the acces token to exchange for whatever information is requested from the authorization server.
+
+An Id token is a jwt.
+
+Authorization server generates a clientId and client secret for all future OAth exchanges. Their sometimes known as App id and App secret.
