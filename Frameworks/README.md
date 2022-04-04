@@ -40,6 +40,11 @@ Updating methods
 5. ComponentWillunmount - called right before a component is removed from the dom. - perform cleanups.
 
 
+#### Client side vs server side rendering
 
+https://www.freecodecamp.org/news/what-exactly-is-client-side-rendering-and-hows-it-different-from-server-side-rendering-bd5c786b340d/
 
+Server side rendering is better for static sites and for seo optimisation. Initial page loads faster since the site is rendered by our server. Downside is frequent request to server and slower page rendering since page is rerendered every time something changes.
+
+Client side rendering is better for sites with more interactions, more like a web app. Fast rendering of website after initial load since there are mechanisms like DOM tree to do partial rerendering. Initial load time might be longer since a javascript file needs to be loaded from the browser and seo is low if not optimised properly.
 
