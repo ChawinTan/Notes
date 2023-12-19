@@ -79,3 +79,12 @@ https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/ <br />
 https://gist.github.com/rosswd/e1afd2b0b0d515517eac - for one email, but same principle, just don't set email/user name to global if you have work and personal mails/accounts <br />
 https://gist.github.com/jexchan/2351996 - a little outdated but still somewhat useful
+
+## Git revert
+
+### For merge commit
+`git revert -m 1 <merge commit>`
+
+### Normal
+`git revert <commit>`
+
